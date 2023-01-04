@@ -22,16 +22,15 @@ with st.container():
     st.write("This App should allow you to download an excel file that shows a list of option on a Sales Order that doesn't appear on the BOM")
 
 
-# Root file path
-file_path = st.text_input('Enter file path:', 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/')
-
-# This is where you upload files to process
-input_fp = st.text_input('Enter input file path:', 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Input/')
-
-# This is where the clean file will be uploaded
-output_fp = st.text_input('Enter output file path:', 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Output/')
-
+excel_file = st.file_uploader("Upload an Excel file", type="xlsx")
 serial = st.text_input('Enter serial number:', '15345')
+
+# Root file path
+file_path = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/'
+# This is where you upload files to process
+input_fp = 'Enter input file path:', 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Input/'
+# This is where the clean file will be uploaded
+output_fp = 'Enter output file path:', 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Output/'
 
 ext = ".xlsx"
 input_file_name = serial + ext
@@ -40,6 +39,7 @@ input_file = input_fp + input_file_name
 output_file = output_fp + output_file_name
 
 drop_f = file_path + 'IDs_To_Delete.xlsx'
+
 
 def process_file():
     # This reads the excel file that contains the Features we want to drop from the table and converts the numbers to integers. 

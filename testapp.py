@@ -11,6 +11,7 @@ Author: Daniel
 
 import pandas as pd
 import streamlit as st
+import urllib.request
 import warnings
 from operator import truediv
 warnings.filterwarnings('ignore')
@@ -22,24 +23,28 @@ with st.container():
     st.write("This App should allow you to download an excel file that shows a list of option on a Sales Order that doesn't appear on the BOM")
 
 
-excel_file = st.file_uploader("Upload an Excel file", type="xlsx")
+input_file = st.file_uploader("Upload an Excel file", type="xlsx")
 serial = st.text_input('Enter serial number:', '15345')
 
 # Root file path
-file_path = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/'
+#file_path = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/'
 # This is where you upload files to process
-input_fp = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Input/'
+#input_fp = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Input/'
 # This is where the clean file will be uploaded
 output_fp = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Output/'
 
 ext = ".xlsx"
 input_file_name = serial + ext
 output_file_name = serial + '_clean' + ext
-input_file = input_fp + input_file_name
+#input_file = input_fp + input_file_name
 output_file = output_fp + output_file_name
 
-drop_f = file_path + 'IDs_To_Delete.xlsx'
+drop_file_url = 'https://github.com/DanPace725/streamlit-hcr/blob/main/files/IDs_To_Delete.xlsx'
 
+with urllib.request.urlopen(drop_file_url) as f:
+    file_contents = f.read()
+
+drop_f = file_contents
 
 def process_file():
     # This reads the excel file that contains the Features we want to drop from the table and converts the numbers to integers. 

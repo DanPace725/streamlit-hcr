@@ -28,9 +28,9 @@ serial = st.text_input('Enter serial number:', '15345')
 # Root file path
 file_path = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/'
 # This is where you upload files to process
-input_fp = 'Enter input file path:', 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Input/'
+input_fp = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Input/'
 # This is where the clean file will be uploaded
-output_fp = 'Enter output file path:', 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Output/'
+output_fp = 'C:/Users/daniel.pace/OneDrive - Cavco Industries/Documents/Hard Card Rec/Output/'
 
 ext = ".xlsx"
 input_file_name = serial + ext

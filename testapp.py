@@ -41,10 +41,8 @@ output_file = output_fp + output_file_name
 
 drop_file_url = 'https://github.com/DanPace725/streamlit-hcr/blob/main/files/IDs_To_Delete.xlsx'
 
-#with urllib.request.urlopen(drop_file_url) as f:
-    #file_contents = f.read()
-
-drop_f = 'https://github.com/DanPace725/streamlit-hcr/blob/main/files/IDs_To_Delete.xlsx'
+with urllib.request.urlopen(drop_file_url) as f:
+    drop_f = f.read()
 
 def process_file():
     # This reads the excel file that contains the Features we want to drop from the table and converts the numbers to integers. 

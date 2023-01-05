@@ -13,6 +13,7 @@ import pandas as pd
 import streamlit as st
 import urllib.request
 import warnings
+import openpyxl
 from operator import truediv
 warnings.filterwarnings('ignore')
 
@@ -46,7 +47,7 @@ with urllib.request.urlopen(drop_file_url) as f:
 
 def process_file():
     # This reads the excel file that contains the Features we want to drop from the table and converts the numbers to integers. 
-    drop_df = pd.read_excel(drop_f)
+    drop_df = pd.read_excel(drop_f, engine='openpyxl')
     drop_df = pd.to_numeric(drop_df['Drop_id'],errors='coerce')
 
     # Read the input file. 

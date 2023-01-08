@@ -34,9 +34,10 @@ st.write("Upload an Excel File to convert to a data frame below")
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
 
-df = pd.read_excel(uploaded_file, header=4)
+df = []
 
 if uploaded_file is not None:
+    df = pd.read_excel(uploaded_file, header=4)
     st.write(df)
 
 

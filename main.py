@@ -40,6 +40,6 @@ if uploaded_file is not None:
   df = pd.read_excel(uploaded_file, header=4)
   st.write(df)
 
-df
+st.write(df)
 
 process = st.button("Process", help="Press this when you've loaded the correct file")

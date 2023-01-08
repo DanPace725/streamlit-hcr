@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy
 import openpyxl
 import streamlit as st
 from functions import fetch_and_read_csv, process_opo

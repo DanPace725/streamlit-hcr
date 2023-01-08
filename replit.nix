@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+    pkgs.streamlit
     pkgs.python38Full
   ];
   env = {

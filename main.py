@@ -23,7 +23,7 @@ drop_df = pd.to_numeric(drop_df['Drop_id'],errors='coerce')
 
 
 # Success Message
-if df.empty: 
+if drop_df.empty: 
   st.write("There's a problem with the drop file")
 else: 
   st.write("Successfully read Drop File")

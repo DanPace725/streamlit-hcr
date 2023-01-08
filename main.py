@@ -36,11 +36,9 @@ uploaded_file = st.file_uploader("Choose a file")
 
 df = pd.read_excel(uploaded_file, header=4)
 
-
 if uploaded_file is not None:
     st.write(df)
-else:
-    st.write("There was a problem")
+
 
 
 

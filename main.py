@@ -28,11 +28,13 @@ if drop_df.empty:
 else: 
   st.write("Successfully read Drop File")
 
+# Instruction Text
+st.write("Upload and Excel File to convert to a data frame below")
+
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
 
-# Instruction Text
-st.write("Upload and Excel File to convert to a data frame below")
+
 
 if uploaded_file is not None:
   dataframe = pd.read_excel(uploaded_file)

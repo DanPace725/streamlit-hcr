@@ -29,7 +29,7 @@ else:
   st.write("Successfully read Drop File")
 
 # Instruction Text
-st.write("Upload and Excel File to convert to a data frame below")
+st.write("Upload an Excel File to convert to a data frame below")
 
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
@@ -37,5 +37,5 @@ uploaded_file = st.file_uploader("Choose a file")
 
 
 if uploaded_file is not None:
-  dataframe = pd.read_excel(uploaded_file)
-  st.write(dataframe)
+  df = pd.read_excel(uploaded_file, header=4)
+  st.write(df)

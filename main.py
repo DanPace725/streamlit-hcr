@@ -45,3 +45,7 @@ if uploaded_file is not None:
 
 
 process = st.button("Process", help="Press this when you've loaded the correct file")
+
+if process:
+  process_opo(df)
+

@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 import io
+from main import drop_df
 
 def fetch_and_read_csv(url):
     # Fetch the CSV file from the URL

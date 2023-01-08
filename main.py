@@ -18,7 +18,9 @@ with st.sidebar:
     "Upload a file")
   
 # Fetch File
-df = fetch_and_read_csv(variables.url)
+drop_df = fetch_and_read_csv(variables.url)
+drop_df = pd.to_numeric(drop_df['Drop_id'],errors='coerce')
+
 
 # Success Message
 if df.empty: 
@@ -28,6 +30,9 @@ else:
 
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
+
+# Instruction Text
+st.write("Upload and Excel File to convert to a data frame below")
 
 if uploaded_file is not None:
   dataframe = pd.read_excel(uploaded_file)

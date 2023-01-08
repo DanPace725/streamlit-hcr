@@ -1,7 +1,10 @@
 import pandas as pd
 import requests
 import io
-from main import drop_df
+import variables
+
+
+
 
 def fetch_and_read_csv(url):
     # Fetch the CSV file from the URL
@@ -15,7 +18,7 @@ def fetch_and_read_csv(url):
     
     return df
 
-def process_opo(df):
+def prep_opo(df):
      # Return only relevant columns
     df = df[['Qty','Option Name','Feat ID#','Option Total']]
 
@@ -24,8 +27,12 @@ def process_opo(df):
 
     # Rename "Feat ID#" to "Part ID"
     df = df.rename(columns={"Feat ID#": "Part ID"})
+    
+    return df
 
-    mask = ~df['Part ID'].isin(drop_df)
+def process_opo(df):
+
+    mask = ~df['Part ID'].isin(variables.drop_df)
 
     # Drop the unnecessary Part ID's
     df = df[mask]

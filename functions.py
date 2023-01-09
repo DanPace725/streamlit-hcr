@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 import io
-import variables
+import drop_df
 
 
 
@@ -32,7 +32,7 @@ def prep_opo(df):
 
 def process_opo(df):
 
-    mask = ~df['Part ID'].isin(variables.drop_df)
+    mask = ~df['Part ID'].isin(drop_df)
 
     # Drop the unnecessary Part ID's
     df = df[mask]

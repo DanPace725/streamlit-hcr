@@ -46,8 +46,7 @@ else:
 process = st.button("Process", help="Press this when you've loaded the correct file")
 
 if process:
-  functions.prep_opo(df)
-  df = functions.prep_opo()
+  df = functions.prep_opo(df)  
   # functions.process_opo(df)
   st.write("Well if you're reading this something happened. Don't hold your breath")
   st.write(df)

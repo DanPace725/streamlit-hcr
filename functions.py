@@ -16,7 +16,7 @@ def fetch_and_read_csv(url):
 
 def fetch_and_read_excel(url):
     response = requests.get(url).content
-    test_file = io.BytesIO(response)
+    test_file = io.BytesIO(response).getvalue()
     xl_df = pd.read_excel(test_file)
     return xl_df
 

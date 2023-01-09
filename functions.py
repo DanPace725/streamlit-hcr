@@ -16,13 +16,14 @@ def fetch_and_read_csv(url):
 
 def fetch_and_read_excel(url):
     response = requests.get(url).content
-    test_file = io.BytesIO(response).getvalue()
+    test_file = io.BytesIO(response)
     xl_df = pd.read_excel(test_file)
     return xl_df
 
 
-def test_file():
-    return variables.excel_url
+def convert_excel():
+    xl_file = fetch_and_read_excel(variables.excel_url)
+    return xl_file
      
 
 

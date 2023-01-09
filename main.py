@@ -19,7 +19,7 @@ with st.sidebar:
   
 
 # Success Message
-if functions.drop_df.empty: 
+if functions.get_df.empty: 
   st.write("There's a problem with the drop file")
 else: 
   st.write("Successfully read Drop File")

@@ -3,6 +3,7 @@ import requests
 import io
 import variables
 
+df = []
 
 def fetch_and_read_csv(url):
     # Fetch the CSV file from the URL
@@ -37,6 +38,7 @@ def get_df():
 
 
 def prep_opo(df):
+    global df
      # Return only relevant columns
     df = df[['Qty','Option Name','Feat ID#','Option Total']]
 

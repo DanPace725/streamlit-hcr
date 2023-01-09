@@ -22,8 +22,8 @@ def fetch_and_read_excel(url):
 
 
 def test_file():
-    xl_file = fetch_and_read_excel(variables.excel_url)
-    return xl_file
+    return variables.excel_url
+     
 
 
 def get_df():

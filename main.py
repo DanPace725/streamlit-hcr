@@ -33,7 +33,6 @@ st.write("Upload an Excel File to convert to a data frame below")
 st.download_button(
   label="Download Test File", 
   data = functions.test_file(),
-  file_name= "test.xlsx",
   mime="application/vnd.ms-excel")
 
 # Upload the Sales Order

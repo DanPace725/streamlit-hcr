@@ -53,9 +53,10 @@ if process:
   df1 = functions.prep_opo(df)  
   df2 =functions.process_opo(df1)
   df2['Part ID'] = df2['Part ID'].apply(lambda x: round(x, 2))
+  df2 = df2.round(2)
   st.write("Well if you're reading this something happened. Don't hold your breath")
   st.write(df2)
-  st.table(df2)
+  
 
   if df2 is not None:
     st.write("Yay! Good job Kronk!")

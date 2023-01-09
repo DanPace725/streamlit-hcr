@@ -38,8 +38,8 @@ if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)
     st.write(df)
 else: 
-  text = "Error: There's a problem with the file"
-  colored_text = f"<span style='color:red'>{text}</span>"
+  text = "Upload an excel file"
+  colored_text = f"<span style='color:blue'>{text}</span>"
   st.write(colored_text, unsafe_allow_html=True)
 
 process = st.button("Process", help="Press this when you've loaded the correct file")

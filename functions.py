@@ -1,7 +1,7 @@
 import pandas as pd
 import requests
 import io
-import variables
+import urls
 
 
 
@@ -20,17 +20,11 @@ def fetch_and_read_excel(url):
     test_file = io.BytesIO(response)
     xl_df = pd.read_excel(test_file)
     return xl_df
-
-
-def convert_excel():
-    return variables.excel_url
-    
+  
      
-
-
 def get_df():
     # Fetch File
-    drop_df = fetch_and_read_csv(variables.url)
+    drop_df = fetch_and_read_csv(urls.drop_url)
     # Convert to Numpy array
     drop_df = pd.to_numeric(drop_df['Drop_id'],errors='coerce')
 
@@ -51,7 +45,7 @@ def prep_opo(df):
 
 def process_opo(df):
 
-    mask = ~df['Part ID'].isin(get_df)
+    mask = ~df['Part ID'].isin(get_df())
 
     # Drop the unnecessary Part ID's
     df = df[mask]

@@ -19,8 +19,10 @@ with st.sidebar:
   
 
 # Success Message
-if functions.get_df is not None: 
-  st.write("There's a problem with the drop file")
+if functions.get_df is None: 
+  text = "Error: There's a problem with the drop file"
+  colored_text = f"<span style='color:red'>{text}</span>"
+  st.write(colored_text, unsafe_allow_html=True)
 else: 
   st.write("Successfully read Drop File")
 
@@ -35,7 +37,10 @@ df = []
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)
     st.write(df)
-
+else: 
+  text = "Error: There's a problem with the file"
+  colored_text = f"<span style='color:red'>{text}</span>"
+  st.write(colored_text, unsafe_allow_html=True)
 
 process = st.button("Process", help="Press this when you've loaded the correct file")
 

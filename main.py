@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-import functions
+from functions import fetch_and_read_csv, prep_opo,process_opo
 import drop_df
 
 # Header

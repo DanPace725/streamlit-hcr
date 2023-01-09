@@ -51,8 +51,8 @@ if process:
   st.write("Well if you're reading this something happened. Don't hold your breath")
   st.write(df1)
 
-if df1 is not None:
-  st.write("Yay! Good job Kronk!")
+  if df1 is not None:
+    st.write("Yay! Good job Kronk!")
 
 
 

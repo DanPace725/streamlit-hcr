@@ -49,5 +49,5 @@ if process:
   functions.prep_opo(df)
   functions.process_opo(df)
   st.write("Well if you're reading this something happened. Don't hold your breath")
-  df
+  st.write(df)
 

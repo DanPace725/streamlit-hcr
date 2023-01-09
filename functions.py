@@ -3,7 +3,7 @@ import requests
 import io
 import variables
 
-df = []
+
 
 def fetch_and_read_csv(url):
     # Fetch the CSV file from the URL
@@ -38,17 +38,16 @@ def get_df():
 
 
 def prep_opo(df):
-    global df
      # Return only relevant columns
     df = df[['Qty','Option Name','Feat ID#','Option Total']]
 
     # drop empty values
-    df = df.dropna('index')
+    df1 = df.dropna('index')
 
     # Rename "Feat ID#" to "Part ID"
-    df = df.rename(columns={"Feat ID#": "Part ID"})
+    df2 = df1.rename(columns={"Feat ID#": "Part ID"})
     
-    return df
+    return df2
 
 def process_opo(df):
 

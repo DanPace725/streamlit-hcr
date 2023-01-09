@@ -29,11 +29,6 @@ else:
 # Instruction Text
 st.write("Upload an Excel File to convert to a data frame below")
 
-# Test File
-st.download_button(
-  label="Download Test File", 
-  data = functions.convert_excel,
-  mime="application/vnd.ms-excel")
 
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
@@ -51,7 +46,8 @@ else:
 process = st.button("Process", help="Press this when you've loaded the correct file")
 
 if process:
-  # functions.prep_opo(df)
-  # functions.process_opo(df)
+  functions.prep_opo(df)
+  functions.process_opo(df)
   st.write("Well if you're reading this something happened. Don't hold your breath")
+  df
 

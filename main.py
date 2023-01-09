@@ -18,10 +18,7 @@ with st.container():
 
 # Sidebar ----
 with st.sidebar:
-  read_csv = st.checkbox(
-    "Read CSV File")
-  upload_file = st.checkbox(
-    "Upload a file")
+  st.table(functions.get_df())
   
 
 # Success Message

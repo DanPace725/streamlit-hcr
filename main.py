@@ -14,7 +14,7 @@ with st.container():
     - Drops blank values
     - Renames "Feat ID#" to "Part ID"
     - Returns Modified Dataframe """
-  st.write(text_md, markdown = True)
+  st.write(text_md)
 
 # Sidebar ----
 with st.sidebar:
@@ -55,7 +55,7 @@ if process:
   df1 = functions.prep_opo(df)  
   df2 =functions.process_opo(df1)
   st.write("Well if you're reading this something happened. Don't hold your breath")
-  st.write(df1)
+  st.write(df2)
 
   if df2 is not None:
     st.write("Yay! Good job Kronk!")

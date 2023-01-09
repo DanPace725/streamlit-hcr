@@ -30,7 +30,11 @@ else:
 st.write("Upload an Excel File to convert to a data frame below")
 
 # Test File
-st.download_button("Download Test File", functions.test_file())
+st.download_button(
+  label="Download Test File", 
+  data = functions.test_file(),
+  file_name= "test.xlsx",
+  mime="application/vnd.ms-excel")
 
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")

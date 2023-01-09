@@ -30,7 +30,7 @@ else:
 st.write("Upload an Excel File to convert to a data frame below")
 
 # Test File
-st.download_button("Download Test File", "https://raw.githubusercontent.com/DanPace725/streamlit-hcr/main/dependencies/TestFile.xlsx")
+st.download_button("Download Test File", functions.test_file)
 
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")

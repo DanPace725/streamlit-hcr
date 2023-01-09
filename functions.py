@@ -14,14 +14,15 @@ def fetch_and_read_csv(url):
     
     return df
 
-def fetch_and_read_excel(test_url):
-    response = requests.get(test_url).content
+def fetch_and_read_excel(url):
+    response = requests.get(url).content
     test_file = io.BytesIO(response)
-    test_file = pd.read_excel(test_file)
+    xl_df = pd.read_excel(test_file)
+    return xl_df
 
 
 def test_file():
-    xlfile = fetch_and_read_excel(variables.test_url)
+    xlfile = fetch_and_read_excel(variables.excel_url)
     return xlfile
 
 

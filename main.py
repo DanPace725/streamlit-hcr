@@ -8,7 +8,13 @@ import functions
 with st.container():
   st.title("Hard Card Reconciliation")
   st.subheader("...Work in Progress...")
-  st.write("This App is my second attempt to get a csv file read from github.")
+  st.write("So far this app takes in an uploaded Excel file and processes it to a certain point.")
+  text_md = """ So far it does the following things:
+    - Returns only certain headers
+    - Drops blank values
+    - Renames "Feat ID#" to "Part ID"
+    - Returns Modified Dataframe """
+  st.write(text_md, markdown = True)
 
 # Sidebar ----
 with st.sidebar:

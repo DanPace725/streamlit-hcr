@@ -36,8 +36,8 @@ uploaded_file = st.file_uploader("Choose a file")
 df = []
 
 if uploaded_file is not None:
-    df = pd.read_excel(uploaded_file, header=4)
-    st.write(df)
+    df4 = pd.read_excel(uploaded_file, header=4)
+    st.write(df4)
 else: 
   text = "Upload an excel file"
   colored_text = f"<span style='color:blue'>{text}</span>"
@@ -46,8 +46,8 @@ else:
 process = st.button("Process", help="Press this when you've loaded the correct file")
 
 if process:
-  functions.prep_opo(df)
+  functions.prep_opo(df4)
   # functions.process_opo(df)
   st.write("Well if you're reading this something happened. Don't hold your breath")
-  st.write(df)
+  st.write(df4)
 

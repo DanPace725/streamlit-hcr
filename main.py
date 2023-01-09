@@ -32,7 +32,7 @@ st.write("Upload an Excel File to convert to a data frame below")
 # Test File
 st.download_button(
   label="Download Test File", 
-  data = functions.convert_excel(),
+  data = functions.convert_excel,
   mime="application/vnd.ms-excel")
 
 # Upload the Sales Order

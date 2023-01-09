@@ -52,7 +52,7 @@ process = st.button("Process", help="Press this when you've loaded the correct f
 if process:
   df1 = functions.prep_opo(df)  
   df2 =functions.process_opo(df1)
-  df2['Part ID'] = df2['Part ID'].apply(lambda x: round(x, 2))
+  df2['Part ID'] = df2['Part ID'].astype(int)
   df2 = df2.round(2)
   st.write("Well if you're reading this something happened. Don't hold your breath")
   st.write(df2)

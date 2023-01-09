@@ -1,9 +1,7 @@
 import pandas as pd
 import requests
 import io
-import drop_df
-
-
+import variables
 
 
 def fetch_and_read_csv(url):
@@ -17,6 +15,15 @@ def fetch_and_read_csv(url):
     df = pd.read_csv(csv_file)
     
     return df
+
+def get_df():
+    # Fetch File
+    drop_df = fetch_and_read_csv(variables.url)
+    # Convert to Numpy array
+    drop_df = pd.to_numeric(drop_df['Drop_id'],errors='coerce')
+
+    return drop_df
+
 
 def prep_opo(df):
      # Return only relevant columns
@@ -32,7 +39,7 @@ def prep_opo(df):
 
 def process_opo(df):
 
-    mask = ~df['Part ID'].isin(drop_df)
+    mask = ~df['Part ID'].isin(get_df)
 
     # Drop the unnecessary Part ID's
     df = df[mask]

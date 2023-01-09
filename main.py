@@ -1,7 +1,8 @@
 import pandas as pd
 import streamlit as st
-from functions import fetch_and_read_csv, prep_opo,process_opo
-import drop_df
+import functions
+
+
 
 # Header
 with st.container():
@@ -18,7 +19,7 @@ with st.sidebar:
   
 
 # Success Message
-if drop_df.empty: 
+if functions.drop_df.empty: 
   st.write("There's a problem with the drop file")
 else: 
   st.write("Successfully read Drop File")
@@ -39,6 +40,7 @@ if uploaded_file is not None:
 process = st.button("Process", help="Press this when you've loaded the correct file")
 
 if process:
-  functions.process_opo(df)
+  # functions.prep_opo(df)
+  # functions.process_opo(df)
   st.write("Well if you're reading this something happened. Don't hold your breath")
 

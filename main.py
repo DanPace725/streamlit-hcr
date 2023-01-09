@@ -29,6 +29,9 @@ else:
 # Instruction Text
 st.write("Upload an Excel File to convert to a data frame below")
 
+# Test File
+st.file_downloader("Download Test File", functions.test_file)
+
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
 

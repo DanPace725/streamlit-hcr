@@ -61,6 +61,13 @@ if process:
   if df2 is not None:
     st.write("Yay! Good job Kronk!")
 
+serial_input = st.text_input("Enter Serial Number Here")
+serial = serial_input
+output_filename = serial + "_clean"
 
+if st.download_button('Download cleaned file'):
+    df.to_excel(output_filename, index=False)
+    st.write('File downloaded!')
+    
 
 

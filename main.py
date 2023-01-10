@@ -34,11 +34,18 @@ else:
 st.write("Upload an Excel File to convert to a data frame below")
 
 
+# Input Serial number and define naming logic
+serial_input = st.text_input("Enter Serial Number Here")
+serial = serial_input
+output_filename = serial + "_clean" + ".xlsx"
+
+
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
 
 df = []
 df2 = []
+clean_df = []
 
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)
@@ -60,15 +67,11 @@ if process:
   
 
   if df2 is not None:
+    clean_df = df2.to_excel(output_filename, index=False)
+    st.write("The file has been saved as an excel file with the name" + output_filename)
     st.write("Yay! Good job Kronk!")
-
-serial_input = st.text_input("Enter Serial Number Here")
-serial = serial_input
-output_filename = serial + "_clean" + ".xlsx"
-clean_df = df2.to_excel(output_filename, index=False)
-
-if st.download_button('Download cleaned file', clean_df):
-    st.write('File downloaded!')
     
 
+if st.download_button('Download cleaned file', clean_df):  
+  st.write('File downloaded!')
 

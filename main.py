@@ -73,8 +73,8 @@ if process:
     
     st.write("The file has been saved as an excel file with the name " + output_filename)
     st.write("Yay! Good job Kronk!")
-    
-mimetype = mimetypes.guess_type(output_filename)    
+
+mimetype, _ = mimetypes.guess_type(output_filename)    
 
 if st.download_button('Download cleaned file', output_filename, mime=mimetype):  
   st.write('File downloaded!')

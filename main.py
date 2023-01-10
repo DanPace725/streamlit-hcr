@@ -45,10 +45,10 @@ output_filename = serial + "_clean" + ".xlsx"
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
 
-df = None
-df2 = None
-clean_df = None
-filename = None
+df = pd.DataFrame()
+df2 = pd.DataFrame()
+clean_df = pd.DataFrame()
+filename = ""
 
 
 if uploaded_file is not None:

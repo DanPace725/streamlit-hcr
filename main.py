@@ -63,10 +63,10 @@ if process:
 
 serial_input = st.text_input("Enter Serial Number Here")
 serial = serial_input
-output_filename = serial + "_clean"
+output_filename = serial + "_clean" + ".xlsx"
+clean_df = df2.to_excel(output_filename, index=False)
 
-if st.download_button('Download cleaned file'):
-    df.to_excel(output_filename, index=False)
+if st.download_button('Download cleaned file', clean_df):
     st.write('File downloaded!')
     
 

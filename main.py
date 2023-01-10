@@ -49,6 +49,7 @@ df = None
 df2 = None
 clean_df = None
 filename = None
+mimetype, _ = None
 
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)

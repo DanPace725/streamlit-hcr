@@ -1,6 +1,8 @@
 import pandas as pd
 import streamlit as st
 import functions
+import mimetypes
+
 
 
 
@@ -68,10 +70,11 @@ if process:
 
   if df2 is not None:
     clean_df = df2.to_excel(output_filename, index=False)
+    mimetype, _ = mimetypes.guess_type(output_filename)
     st.write("The file has been saved as an excel file with the name " + output_filename)
     st.write("Yay! Good job Kronk!")
     
 
-if st.download_button('Download cleaned file', output_filename, mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"):  
+if st.download_button('Download cleaned file', output_filename, mime=mimetype):  
   st.write('File downloaded!')
 

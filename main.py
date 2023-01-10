@@ -38,6 +38,7 @@ st.write("Upload an Excel File to convert to a data frame below")
 uploaded_file = st.file_uploader("Choose a file")
 
 df = []
+df2 = []
 
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)

@@ -72,13 +72,14 @@ if process:
     #clean_df = df2.to_excel(output_filename, index=False)
     
     #st.write("The file has been saved as an excel file with the name " + output_filename)
+    clean_df = functions.convert_df(df2)
+    mimetype, _ = mimetypes.guess_type(df2) 
     st.write("Yay! Good job Kronk!")
 
    
 
 
-clean_df = functions.convert_df(df2)
-mimetype, _ = mimetypes.guess_type(df2) 
+
 
 if st.download_button(
   label='Download cleaned file',

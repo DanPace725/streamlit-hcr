@@ -68,10 +68,10 @@ if process:
 
   if df2 is not None:
     clean_df = df2.to_excel(output_filename, index=False)
-    st.write("The file has been saved as an excel file with the name" + output_filename)
+    st.write("The file has been saved as an excel file with the name " + output_filename)
     st.write("Yay! Good job Kronk!")
     
 
-if st.download_button('Download cleaned file', output_filename):  
+if st.download_button('Download cleaned file', output_filename, mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"):  
   st.write('File downloaded!')
 

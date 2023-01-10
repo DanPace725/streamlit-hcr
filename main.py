@@ -49,7 +49,7 @@ df = None
 df2 = None
 clean_df = None
 filename = None
-mimetype, _ = ""
+
 
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)
@@ -77,10 +77,10 @@ if process:
     clean_df = functions.convert_df(df2)
    
     filename = serial + ".csv"
-    mimetype, _ = mimetypes.guess_type(filename)
+    
     st.write("Yay! Good job Kronk!")
 
-
+mimetype, _ = mimetypes.guess_type(filename)
 if st.download_button(
   label='Download cleaned file',
   data=clean_df, 

@@ -72,6 +72,6 @@ if process:
     st.write("Yay! Good job Kronk!")
     
 
-if st.download_button('Download cleaned file', clean_df):  
+if st.download_button('Download cleaned file', output_filename):  
   st.write('File downloaded!')
 

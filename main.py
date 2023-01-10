@@ -47,7 +47,7 @@ uploaded_file = st.file_uploader("Choose a file")
 
 df = pd.DataFrame()
 df2 = pd.DataFrame()
-clean_df = []
+clean_df = None
 filename = ""
 
 

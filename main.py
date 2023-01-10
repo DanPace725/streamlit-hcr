@@ -45,9 +45,10 @@ output_filename = serial + "_clean" + ".xlsx"
 # Upload the Sales Order
 uploaded_file = st.file_uploader("Choose a file")
 
-df = []
-df2 = []
-clean_df = []
+df = None
+df2 = None
+clean_df = None
+filename = None
 
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)

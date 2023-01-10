@@ -47,8 +47,8 @@ uploaded_file = st.file_uploader("Choose a file")
 
 df = pd.DataFrame()
 df2 = pd.DataFrame()
-clean_df = None
-filename = ""
+
+
 
 
 if uploaded_file is not None:
@@ -74,17 +74,19 @@ if process:
     #clean_df = df2.to_excel(output_filename, index=False)
     
     #st.write("The file has been saved as an excel file with the name " + output_filename)
+    # mimetype, _ = mimetypes.guess_type(filename)
+
     clean_df = functions.convert_df(df2)
    
     filename = serial + ".csv"
     
     st.write("Yay! Good job Kronk!")
 
-mimetype, _ = mimetypes.guess_type(filename)
-if st.download_button(
-  label='Download cleaned file',
-  data=clean_df, 
-  file_name= filename,
-  mime=mimetype):  
-  st.write('File downloaded!')
+
+    if st.download_button(
+      label='Download cleaned file',
+      data=clean_df, 
+      file_name= filename,
+      mime='text/csv'):  
+      st.write('File downloaded!')
 

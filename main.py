@@ -69,13 +69,20 @@ if process:
   
 
   if df2 is not None:
-    clean_df = df2.to_excel(output_filename, index=False)
+    #clean_df = df2.to_excel(output_filename, index=False)
     
-    st.write("The file has been saved as an excel file with the name " + output_filename)
+    #st.write("The file has been saved as an excel file with the name " + output_filename)
     st.write("Yay! Good job Kronk!")
 
-mimetype, _ = mimetypes.guess_type(output_filename)    
+   
 
-if st.download_button('Download cleaned file', output_filename, mime=mimetype):  
+
+clean_df = functions.convert_df(df2)
+mimetype, _ = mimetypes.guess_type(df2) 
+
+if st.download_button(
+  label='Download cleaned file',
+  data=clean_df, 
+  mime=mimetype):  
   st.write('File downloaded!')
 

@@ -53,7 +53,7 @@ df2 = pd.DataFrame()
 
 if uploaded_file is not None:
     df = pd.read_excel(uploaded_file, header=4)
-    st.write(df)
+    st.write("Excel File Read Successfully")
 else: 
   text = "Upload an excel file"
   colored_text = f"<span style='color:blue'>{text}</span>"
@@ -67,7 +67,7 @@ if process:
   df2['Part ID'] = df2['Part ID'].astype(int)
   df2 = df2.round(2)
   st.write("Well if you're reading this something happened. Don't hold your breath")
-  st.write(df2)
+  st.write("File Cleaned")
   
 
   if df2 is not None:
@@ -89,4 +89,5 @@ if process:
       file_name= filename,
       mime='text/csv'):  
       st.write('File downloaded!')
+      st.write("Tada!")
 

@@ -9,8 +9,8 @@ import mimetypes
 # Header
 with st.container():
   st.title("Hard Card Reconciliation")
-  st.subheader("...Work in Progress...")
-  st.write("So far this app takes in an uploaded Excel file and processes it to a certain point.")
+  st.subheader("Version: A.01")
+  st.write("This web app will process the Options Per Order file and will download a .csv file for further processing.")
   text_md = """ So far it does the following things:
     - Returns only certain headers
     - Drops blank values
@@ -33,7 +33,7 @@ else:
   st.write("Successfully read Drop File")
 
 # Instruction Text
-st.write("Upload an Excel File to convert to a data frame below")
+st.write("Input the Serial number")
 
 
 # Input Serial number and define naming logic

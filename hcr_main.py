@@ -12,7 +12,7 @@ import tempfile
 # Header
 with st.container():
   st.title("Hard Card Reconciliation")
-  st.subheader("Version: A.01")
+  st.subheader("Version: A.02")
   st.write("This web app will process the Options Per Order file and will download a .csv file for further processing.")
   
 

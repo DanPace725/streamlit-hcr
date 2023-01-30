@@ -36,12 +36,12 @@ def prep_opo(df):
     df = df[['Qty','Option Name','Feat ID#','Option Total']]
 
     # drop empty values
-    df1 = df.dropna('index')
+    df = df.dropna('index')
 
     # Rename "Feat ID#" to "Part ID"
-    df2 = df1.rename(columns={"Feat ID#": "Part ID"})
+    df = df.rename(columns={"Feat ID#": "Part ID"})
     
-    return df2
+    return df
 
 def process_opo(df):
 
@@ -53,11 +53,10 @@ def process_opo(df):
     # Sort Option Name A-Z and reset index
     df = df.sort_values('Option Name')
     df = df.reset_index(drop=True)
-
     return df 
 
 def convert_df(df):
-    return df.to_csv(index=False).encode('utf-8')
+   return df.to_csv(index=False)
 
 
 

@@ -80,9 +80,7 @@ if process:
    
     filename = serial + ".csv"
     
-    st.write("Yay! Good job Kronk!")
-
-
+    
     if st.download_button(
       label='Download cleaned file',
       data=clean_df, 

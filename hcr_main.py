@@ -59,7 +59,7 @@ if process:
 
       if not df.empty:
           clean_df = df
-          new_filename = f"{filename.split('.')[0]}_clean.csv"
+          new_filename = f"{filename.split('.')[0]}.csv"
 
           # Write the cleaned file to a temporary file
           temp_file = tempfile.NamedTemporaryFile(mode="w", suffix=".csv", delete=False)
